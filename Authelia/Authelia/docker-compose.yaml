@@ -5,13 +5,13 @@ volumes:
     driver_opts:
       type: nfs
       o: addr=192.168.200.101,rw,hard,intr,nolock
-      device: "/volume2/Config/Authelia"
+      device: "/volume2/Docker/Authelia"
   redis:
     driver: local
     driver_opts:
       type: nfs
       o: addr=192.168.200.101,rw,hard,intr,nolock
-      device: "/volume2/Config/Redis"
+      device: "/volume2/Docker/Redis"
 services:
   authelia:
     image: authelia/authelia
