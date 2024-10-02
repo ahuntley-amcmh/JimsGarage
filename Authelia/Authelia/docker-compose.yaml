@@ -51,6 +51,11 @@ services:
   redis:
     image: redis:alpine
     container_name: redis
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          #- node.labels.bitwarden.bitwarden-data == true
     volumes:
       - redis:/data
     networks:
